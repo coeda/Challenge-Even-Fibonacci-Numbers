@@ -7,19 +7,20 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
-  var storedValue = 2;
+  var storedValue = 1;
+  var nextFibValue = 0;
   // do your work here
 
-  for(var i = 0; i <= maxFibValue; i += storedValue){
+  for(var i = 1; i <= maxFibValue; i = (storedValue + nextFibValue)){
     if(i%2 === 0){
-      storedValue += i;
-
-      i += storedValue;
-      sum = i;
+      sum += i;
     }
+    nextFibValue = storedValue;
+    storedValue = i;
   }
 
   return sum;
+
 }
 
 // bonus round
@@ -31,8 +32,20 @@ function _highestFibonacciNumber (maxFibValue){
 
   //do your work here
 
+  var storedValue = 1;
+  var nextFibValue = 0;
+
+  for(var i = 1; i < maxFibValue; i = (storedValue + nextFibValue)){
+    highest = i;
+    nextFibValue = storedValue;
+    storedValue = i;
+  }
+
+
   return highest;
 }
+
+
 
 /**
  * Do not modify code below.

@@ -7,8 +7,17 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
-
+  var storedValue = 2;
   // do your work here
+
+  for(var i = 0; i <= maxFibValue; i += storedValue){
+    if(i%2 === 0){
+      storedValue += i;
+
+      i += storedValue;
+      sum = i;
+    }
+  }
 
   return sum;
 }
@@ -23,7 +32,7 @@ function _highestFibonacciNumber (maxFibValue){
   //do your work here
 
   return highest;
-};
+}
 
 /**
  * Do not modify code below.
